@@ -7,7 +7,7 @@ import './AllBookings.css'
 const AllBookings = () => {
     const [Bookings, setBookings] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        fetch('https://lit-plains-47991.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [])

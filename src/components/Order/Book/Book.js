@@ -14,7 +14,7 @@ const Book = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [serviceDetail, setServiceDetail] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/events/${id}`;
+    const url = `https://lit-plains-47991.herokuapp.com/events/${id}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setServiceDetail(data))
@@ -22,7 +22,7 @@ const Book = () => {
 
   const handlePayment = (paymentId) => {
     const serviceDetails = { ...loggedInUser, service: serviceDetail, payment: paymentId, orderTime: new Date() }
-    fetch('http://localhost:5000/checkout', {
+    fetch('https://lit-plains-47991.herokuapp.com/checkout', {
       method: "POST",
       headers: {
         'content-type': "application/json"

@@ -10,7 +10,7 @@ const Admin = () => {
     }
 
     const handleSubmit = () => {
-        fetch('http://localhost:5000/admin', {
+        fetch('https://lit-plains-47991.herokuapp.com/admin', {
             method: "POST",
             headers: {
                 'content-type': "application/json"

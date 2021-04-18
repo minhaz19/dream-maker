@@ -14,7 +14,7 @@ const AddService = () => {
             Description: data.Description,
             imageURL: imageURL
         }
-        const url = 'http://localhost:5000/addServices';
+        const url = 'https://lit-plains-47991.herokuapp.com/addServices';
         fetch(url, {
             method: "POST",
             headers: {

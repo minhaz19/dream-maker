@@ -51,6 +51,7 @@ const AddService = () => {
                     <p>Description:</p>
                     <input className="form-control" name="Description" placeholder="Event description" ref={register} />
                     <br />
+                    <p>Upload Event Image:</p>
                     <input type="file" name="imageFile" onChange={handleImageUpload} />
                     <br/>                   
                     <input className="btn btn-brand text-white mt-3" type="submit" />

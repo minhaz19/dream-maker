@@ -23,7 +23,7 @@ const AllBookings = () => {
                 <th className="text-secondary text-left" scope="col">Sr No</th>
                 <th className="text-secondary" scope="col">Name</th>
                 <th className="text-secondary" scope="col">Email Id</th>
-                <th className="text-secondary" scope="col">Service</th>
+                <th className="text-secondary" scope="col">Events Name</th>
                 <th className="text-secondary" scope="col">Pay With</th>
                 <th className="text-secondary" scope="col">Status</th>
                 </tr>

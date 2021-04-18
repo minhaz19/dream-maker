@@ -16,12 +16,12 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/allOrderList" className="text-white">
-                        <FontAwesomeIcon icon={faList} /> <span>Order List</span>
+                        <FontAwesomeIcon icon={faList} /> <span>All Booking List</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/addService" className="text-white">
-                        <FontAwesomeIcon icon={faPlus} /> <span>Add Service</span>
+                        <FontAwesomeIcon icon={faPlus} /> <span>Add Events</span>
                     </Link>
                 </li>
                 <li>
@@ -31,7 +31,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/manageService" className="text-white" >
-                        <FontAwesomeIcon icon={faFileAlt} /> <span>Manage Service</span>
+                        <FontAwesomeIcon icon={faFileAlt} /> <span>Manage Events</span>
                     </Link>
                 </li>
             </ul>

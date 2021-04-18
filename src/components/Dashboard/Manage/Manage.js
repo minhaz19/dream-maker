@@ -33,7 +33,7 @@ const Manage = () => {
             <thead>
                 <tr>
                 <th className="text-secondary text-left" scope="col">Sr No</th>
-                <th className="text-secondary" scope="col">Name</th>
+                <th className="text-secondary" scope="col">Event Name</th>
                 <th className="text-secondary" scope="col">Price</th>
                 <th className="text-secondary" scope="col">Action</th>
                 </tr>

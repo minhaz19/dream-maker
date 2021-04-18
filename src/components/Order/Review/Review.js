@@ -52,6 +52,7 @@ const Review = () => {
                     <input className="form-control" name="Description" placeholder="Review description" ref={register} />
                     <br />
                     <br />
+                    <p>Upload your Image:</p>
                     <input type="file" name="imageFile" onChange={handleImageUpload} />
                     <br />
                     <br />

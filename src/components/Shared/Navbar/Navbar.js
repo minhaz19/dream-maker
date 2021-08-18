@@ -7,8 +7,9 @@ import { UserContext } from '../../../App';
 
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const name = loggedInUser.name;
     const [isAdmin, setIsAdmin] = useState(false);
-     useEffect(() => {
+    useEffect(() => {
         fetch('https://lit-plains-47991.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -17,30 +18,43 @@ const Navbar = () => {
             .then(res => res.json())
             .then(data => setIsAdmin(data));
     }, [])
-    
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
-    }
+
     return (
-        <div className="header">
-        <div className="topnav" id="myTopnav">
-            <a><Link to='/'><h6>Dream Maker</h6></Link></a>
-            <div class="header-right">
-            <a></a>
-                <a><Link to="/">Home</Link></a>
-                <a><Link style={{display: isAdmin ? 'block' : 'none'}} to="/allOrderList">Admin</Link></a>
-                <a><Link to="/login">Login</Link></a>
-                <a href="javascript:void(0);" class="icon" onClick={() => myFunction()}>
-                <Link><FontAwesomeIcon icon={faBars} />
-                </Link></a>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid mx-5">
+                <Link class="navbar-brand" to="/">Navbar</Link>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    </ul>
+                    <div>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/">Home</Link>
+                            </li>
+                            {isAdmin && <li class="nav-item">
+                                <Link class="nav-link" to="/allOrderList">Admin</Link>
+                            </li>}
+                            {!name && <li class="nav-item">
+                                <Link class="nav-link" to="/login">Login</Link>
+                            </li>}
+                            {name && <li class="nav-item dropdown">
+                                <Link class="nav-link dropdown-toggle" to="/login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {name ? name : 'Login'}
+                                </Link>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><Link class="dropdown-item" to="/">Logout</Link></li>
+                                </ul>
+                            </li>}
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </nav>
     );
 };
 

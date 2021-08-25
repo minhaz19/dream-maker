@@ -3,8 +3,8 @@ import camera from '../../../images/camera.jpg';
 
 const HeaderMain = () => {
     return (
-        <main style={{height: "550px"}} className="row d-flex align-items-center">
-            <div className="col-md-4 offset-md-1">
+        <main style={{height: "600px"}} className="row d-flex align-items-center">
+            <div className="col-md-4 offset-md-1 mt-5">
                 <h1 style={{ color: '#1cc7c1' }}>Dream Maker</h1>
                 <h3 style={{ color: '#1cc7c1' }}>Your event is our responsibility</h3>
                 <p className="text-secondary text-white">Lorem ipsum dolor, sit amet consectetur <br/> adipisicing elit. Rerum expedita aut <br/> sequi aliquid perferendis est?</p>

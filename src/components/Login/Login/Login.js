@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -12,8 +12,10 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
+
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -133,21 +135,21 @@ console.log(user);
           <form action="" onSubmit={handleSubmit}>
             { newUser && <div className="form-group">
               <label htmlFor="">User Name</label>
-              <input type="text" onBlur={handleBlur} className="form-control"  name="name" required/>
+              <input type="text" onBlur={handleBlur} className="form-control"  name="name" placeholder="Enter Your Name" required/>
             </div>}
             <div className="form-group">
               <label htmlFor="">Email Address</label>
-              <input type="text" onBlur={handleBlur} className="form-control" name="email" required/>
+              <input type="text" onBlur={handleBlur} className="form-control" name="email" placeholder="Enter Your Email Address" required/>
             </div>
             <div className="form-group">
               <label htmlFor="">Password</label>
-              <input type="password" onBlur={handleBlur} className="form-control" name="password" required/>
+              <input type="password" onBlur={handleBlur} className="form-control" name="password" placeholder="Enter your password [password must contain number and more then 6 letters]" required/>
             </div>
             <div className="form-group">
               <input type="checkbox" name="newUser" onChange={() => setNewUser(!newUser )} id="" />
               <label htmlFor="newUser" className="text-danger ms-1">Open a new account</label>
               <br />
-              { !newUser && <label htmlFor=""> For admin use <span className="text-primary">minhaz123@gmail.com</span> as a mail and <span className="text-primary">minhaz123</span> as a password</label>}
+              { !newUser && <label htmlFor="">*For admin use <span className="text-primary">minhaz123@gmail.com</span> as a mail and <span className="text-primary">minhaz123</span> as a password</label>}
             </div>
             <div className="form-group mt-3">
               <input type="submit" className="btn btn-brand text-white" value={newUser ? 'Create new account' : 'Login'} />
@@ -165,3 +167,4 @@ console.log(user);
 };
 
 export default Login;
+

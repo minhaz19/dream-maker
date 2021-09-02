@@ -13,11 +13,11 @@ const OrderSidebar = () => {
                         <h5><span>Home</span></h5>
                     </Link>
                 </li>
-                <li>
+               {id && <li>
                     <Link to={ `/book/${id}`} className="text-white">
                         <FontAwesomeIcon icon={faCartPlus} /> <span>Book</span>
                     </Link>
-                </li>
+                </li>}
                 <li>
                     <Link to="/bookingList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Booking List</span>

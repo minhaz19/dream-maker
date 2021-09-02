@@ -7,7 +7,7 @@ const AllBookingsById = ({books}) => {
         <div class="card-body">
             <h5 class="card-title">{books.service.name}</h5>
             <p class="card-text">{books.service.Description}</p>
-            <button class="btn btn-primary">status</button>
+            <button class="btn btn-primary">{books.status}</button>
         </div>
     </div>
       </div>

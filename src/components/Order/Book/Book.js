@@ -21,7 +21,13 @@ const Book = () => {
   }, [id])
 
   const handlePayment = (paymentId) => {
-    const serviceDetails = { ...loggedInUser, service: serviceDetail, payment: paymentId, orderTime: new Date() }
+    const serviceDetails = { 
+      ...loggedInUser, 
+      service: serviceDetail, 
+      payment: paymentId, 
+      status: 'Pending',
+      orderTime: new Date() 
+    }
     fetch('https://lit-plains-47991.herokuapp.com/checkout', {
       method: "POST",
       headers: {

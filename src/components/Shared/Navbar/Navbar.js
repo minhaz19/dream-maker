@@ -8,6 +8,7 @@ import firebaseConfig from '../../Login/Login/firebase.config';
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [nav, setNav] = useState(false);
 
     useEffect(() => {
         fetch('https://lit-plains-47991.herokuapp.com/isAdmin', {
@@ -19,26 +20,36 @@ const Navbar = () => {
             .then(data => setIsAdmin(data));
     }, [])
 
-    // const logout = () =>
-    //     firebase
-    //         .auth()
-    //         .signOut()
-    //         .then(() => {
+    const logout = () =>
+        firebase
+            .auth()
+            .signOut()
+            .then(() => {
                
-    //         })
-    //         .catch((error) => {
-    //             console.log(error.message)
-    //         });
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
 
-    // const signedOut = () => {
-    //     logout();
-    //     setLoggedInUser(null)
-    // };
+    const signedOut = () => {
+        logout();
+        setLoggedInUser(null)
+    };
+    
+    const changeBackground =()=>{
+        if(window.scrollY > 100){
+            setNav(true)
+        }
+        else{
+            setNav(false)
+        }
+    }
 
+    window.addEventListener('scroll',changeBackground)
 
     return (
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark my-navbar ">
+        <nav class={nav? "navbar fixed-top navbar-expand-lg navbar-dark my-navbar" : "navbar fixed-top navbar-expand-lg navbar-dark"}>
             <div class="container ">
                 <Link class="navbar-brand main-name" to="/">Dream Maker</Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,8 +61,10 @@ const Navbar = () => {
                         <li class="nav-item">
                             <Link class="nav-link" to="/">Home</Link>
                         </li>
-                        {isAdmin && <li class="nav-item">
-                            <Link class="nav-link" to="/allOrderList">Admin</Link>
+                        {isAdmin ? <li class="nav-item">
+                            <Link class="nav-link" to="/allOrderList">Admin Dashboard</Link> 
+                        </li> : <li class="nav-item">
+                            <Link class="nav-link" to="/bookingList">User Dashboard</Link> 
                         </li>}
                         {!loggedInUser?.name && <li class="nav-item">
                             <Link class="nav-link" to="/login">Login</Link>
@@ -61,7 +74,7 @@ const Navbar = () => {
                                 {loggedInUser?.name ? loggedInUser?.name : 'Login'}
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link style={{ color: '#1cc7c1' }} class="dropdown-item">Logout</Link></li>
+                                <li><a style={{ color: '#1cc7c1' }}  class="dropdown-item" onClick={signedOut} href="/login">Logout</a></li>
                             </ul>
                         </li>}
                     </ul>

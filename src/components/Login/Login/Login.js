@@ -53,7 +53,7 @@ const Login = () => {
     error: '',
   });
 
-console.log(user);
+// console.log(user);
 
   const handleBlur = (e) => {
     let isFieldValid = true;
@@ -77,7 +77,7 @@ console.log(user);
   }
 
   const handleSubmit = (e) => {
-    console.log(e.email);
+    // console.log(e.email);
     e.preventDefault();
     if (newUser && user.email && user.password) {
       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)

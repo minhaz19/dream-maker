@@ -24,7 +24,7 @@ const UpdateBooking = (props, key) => {
         setDropdown(true);
     }
     const handleSelect = (e) => {
-        console.log(e)
+        // console.log(e)
         const newUpdate = { ...update };
         newUpdate.status = e;
         setUpdate(newUpdate);  

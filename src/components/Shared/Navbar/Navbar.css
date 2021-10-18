@@ -1,11 +1,20 @@
 .my-navbar{
   background: linear-gradient(75deg, #19D3AE,#0fcfec);
+  z-index: 999;
 }
 .navbar {
   transition: all 0.8s;
 }
 .navbar-dark .navbar-nav .nav-link{
   color: white;
+}
+.main-name{
+  font-size: 22px;
+  font-weight: 700;
+}
+.nav-name{
+  font-size: 20px;
+  font-weight: 300;
 }
 
 @media (max-width: 991.98px) {

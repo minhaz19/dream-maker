@@ -1,18 +1,19 @@
 import React from 'react';
-import camera from '../../../images/camera.jpg';
+import Fade from 'react-reveal/Fade';
 
 const HeaderMain = () => {
     return (
-        <main style={{height: "600px"}} className="row d-flex align-items-center">
-            <div className="col-md-4 offset-md-1 mt-5">
-                <h1 style={{ color: '#1cc7c1' }}>Dream Maker</h1>
-                <h3 style={{ color: '#1cc7c1' }}>Your event is our responsibility</h3>
-                <p className="text-secondary text-white">Lorem ipsum dolor, sit amet consectetur <br/> adipisicing elit. Rerum expedita aut <br/> sequi aliquid perferendis est?</p>
+        <section className="container">
+        <main style={{height: "600px"}} className="d-flex align-items-center justify-content-end">
+        <Fade duration={2000} right>
+            <div className="text-start">
+                <h1 className="headerTitle" style={{ color: '#FFD700' }}>Dream Maker</h1>
+                <h3 className="miniTitle" style={{ color: '#800000' }}>Your event is our responsibility</h3>
+                <p className="text-secondary text-white headerContent">Because in your dreams, every detail matters.</p>
             </div>
-            <div className="col-md-6">
-                <img src={camera} alt="" className="img-fluid"/>
-            </div>
+            </Fade>
         </main>
+      </section>  
     );
 };
 

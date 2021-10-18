@@ -130,6 +130,7 @@ const Login = () => {
 
   return (
     <div className="loginBg">
+      <div className="container">
       <div className="row align-items-center justify-content-center" style={{ height: "100vh" }}>
         <div className="col-md-6 shadow p-5 bgColor">
           <form action="" onSubmit={handleSubmit}>
@@ -161,6 +162,7 @@ const Login = () => {
             <button className="btn btn-brand text-white rounded-pill" onClick={handleGoogleSignIn}><img style={{ width: '25px' }} src={google} alt="" /> Google Sign in</button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

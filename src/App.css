@@ -11,3 +11,9 @@
 .text-brand{
   color: #1cc7c1;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#mainSec {
+    font-family: 'Poppins', sans-serif!important;
+}

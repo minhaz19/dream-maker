@@ -30,11 +30,11 @@ const descriptionData = [
 
 const Description = () => {
     return (
-       <section className="descriptions my-5">
+       <section id="blogs" className="descriptions my-5">
            <div className="container">
                <div className="section-header text-center">
-                    <h5 className="text-brand text-uppercase">our blog</h5>
-                    <h1>From Our Blog News</h1>
+                    <h5 className="text-uppercase miniTitle"  style={{ color: '#1cc7c1' }}>our blog</h5>
+                    <h1 className="headerTitle">From Our Blog News</h1>
                </div>
                <div className="card-deck mt-5 row">
                     {

@@ -1,20 +1,20 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+import userImg from '../../../images/user.svg';
+import '../Testimonials/Testimonials.css';
 
 const Testimonial = (props) => {
     const {name,address,imageURL,Description} = props.testimonial;
     return (
-        <div className="card shadow-sm col-md-4 info-card">
-            <div className="card-body">
-                <p className="card-text text-center">{Description}</p>
+        <Fade bottom duration={1000} distance='40px'>
+              <div className="customerReview">
+                { imageURL ? <img src={imageURL} alt=""/>:
+                <img src={`${userImg}`} alt=""/>}
+                <h5 className="testimonialName">{name}</h5>
+                <h6 className="testimonialAddress">{address}</h6>
+                <p><i>{Description}</i></p>
             </div>
-            <div className="card-footer d-flex align-items-center">
-            <img className="mx-3" src={imageURL} alt="" width="60"/>
-                <div>
-                    <h5 className="text-brand">{name}</h5>
-                    <p className="m-0">{address}</p>
-                </div>
-            </div>
-       </div>
+        </Fade>
     );
 };
 

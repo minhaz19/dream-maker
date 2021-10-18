@@ -2,11 +2,11 @@ import React from 'react';
 import './Contact.css';
 const Contact = () => {
     return (
-       <section className="contact my-5 py-5">
+       <section id="contact" className="contact my-5 py-5">
            <div className="container">
                <div className="section-header text-center text-white mb-5">
-                    <h5 className="text-brand">Contact</h5>
-                    <h1>Always  connect with us</h1>
+                    <h5 className="miniTitle" style={{ color: '#1cc7c1' }}>Contact</h5>
+                    <h1 className="headerTitle">Always  connect with us</h1>
                </div>
                <div className="col-md-9 mx-auto">
                    <form action="">
